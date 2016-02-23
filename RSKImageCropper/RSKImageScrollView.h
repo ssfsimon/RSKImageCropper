@@ -51,6 +51,7 @@
 
 @property (nonatomic, strong) UIImageView *zoomView;
 @property (nonatomic, assign) BOOL aspectFill;
+@property (nonatomic, assign) CGFloat minZoomScale;
 
 - (void)displayImage:(UIImage *)image;
 

@@ -228,6 +228,11 @@
     if (minScale > maxScale) {
         minScale = maxScale;
     }
+    
+    // ** override minScale
+    if (self.minZoomScale) {
+        minScale = self.minZoomScale;
+    }
         
     self.maximumZoomScale = maxScale;
     self.minimumZoomScale = minScale;
