@@ -224,16 +224,11 @@
     maxImageScale = MAX(minScale, maxImageScale);
     maxScale = MAX(maxScale, maxImageScale);
 
-    // don't let minScale exceed maxScale. (If the image is smaller than the screen, we don't want to force it to be zoomed.)
-    if (minScale > maxScale) {
-        minScale = maxScale;
-    }
+//    // don't let minScale exceed maxScale. (If the image is smaller than the screen, we don't want to force it to be zoomed.)
+//    if (minScale > maxScale) {
+//        minScale = maxScale;
+//    }
     
-    // ** override minScale
-    if (self.minZoomScale) {
-        minScale = self.minZoomScale;
-    }
-        
     self.maximumZoomScale = maxScale;
     self.minimumZoomScale = minScale;
 }
