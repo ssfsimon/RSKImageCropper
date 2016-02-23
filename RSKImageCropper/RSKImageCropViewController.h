@@ -23,6 +23,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RSKImageScrollView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -72,6 +73,14 @@ typedef NS_ENUM(NSUInteger, RSKImageCropMode) {
  @discussion A `RSKImageCropViewControllerDataSource` data source provides a custom rect and a custom path for the mask.
  */
 @property (weak, nonatomic, nullable) id<RSKImageCropViewControllerDataSource> dataSource;
+
+
+///-----------------------------
+/// @name Accessing the Delegate
+///-----------------------------
+
+@property (strong, nonatomic) RSKImageScrollView *imageScrollView;
+
 
 ///--------------------------
 /// @name Accessing the Image

@@ -24,7 +24,6 @@
 
 #import "RSKImageCropViewController.h"
 #import "RSKTouchView.h"
-#import "RSKImageScrollView.h"
 #import "RSKInternalUtility.h"
 #import "UIImage+RSKImageCropper.h"
 #import "CGGeometry+RSKImageCropper.h"
@@ -47,7 +46,6 @@ static const CGFloat kLayoutImageScrollViewAnimationDuration = 0.25;
 @property (copy, nonatomic) UIColor *originalNavigationControllerViewBackgroundColor;
 @property (assign, nonatomic) BOOL originalStatusBarHidden;
 
-@property (strong, nonatomic) RSKImageScrollView *imageScrollView;
 @property (strong, nonatomic) RSKTouchView *overlayView;
 @property (strong, nonatomic) CAShapeLayer *maskLayer;
 
