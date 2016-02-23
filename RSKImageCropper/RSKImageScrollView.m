@@ -57,6 +57,8 @@
 
     CGPoint _pointToCenterAfterResize;
     CGFloat _scaleToRestoreAfterResize;
+    
+    CGFloat _forcedMinimumScale;
 }
 
 @end
@@ -224,10 +226,14 @@
     maxImageScale = MAX(minScale, maxImageScale);
     maxScale = MAX(maxScale, maxImageScale);
 
-//    // don't let minScale exceed maxScale. (If the image is smaller than the screen, we don't want to force it to be zoomed.)
-//    if (minScale > maxScale) {
-//        minScale = maxScale;
-//    }
+    // don't let minScale exceed maxScale. (If the image is smaller than the screen, we don't want to force it to be zoomed.)
+    if (minScale > maxScale) {
+        minScale = maxScale;
+    }
+    
+    if (_forcedMinimumScale) {
+        minScale = _forcedMinimumScale;
+    }
     
     self.maximumZoomScale = maxScale;
     self.minimumZoomScale = minScale;
@@ -240,6 +246,8 @@
     CGFloat yScale = boundsSize.height / _imageSize.height;   // the scale needed to perfectly fit the image height-wise
     CGFloat scale = MAX(xScale, yScale);
     self.zoomScale = scale;
+    self.minimumZoomScale = scale;
+    _forcedMinimumScale = scale;
 }
 
 - (void)setInitialContentOffset
